@@ -17,20 +17,20 @@ jQuery(document).ready(function($) {
     	});
 
     	//call boxOut
-    	trigger.on("click", boxOut);
+    	trigger.on("click", expandBox);
 
         console.log("HOORAY INIT!");
     }
 
     // write custom functions here
-    function boxOut() {
+    function expandBox() {
 
     	// vars to make your life easier
     	var container = $("div.box"),
     		trigger = $("div.box a"),
     		vpw = $(window).width(),
     		containerHeight = $("div.box").height(),
-    		selected = trigger.parent(":eq(2)");
+    		selected = $("a.clicked").parent().parent();
 
     	if (trigger.hasClass("clicked")) {
 
@@ -50,9 +50,8 @@ jQuery(document).ready(function($) {
 
     	if (container.hasClass("selected")) {
 
-    		container.css("opacity", 1);
-    	} else {
     		container.css("opacity", 0);
+    		selected.css("opacity", 1);
     	}
 
 
