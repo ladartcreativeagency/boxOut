@@ -69,7 +69,7 @@ section.content {
 	margin: 0;
 }
 
-div.box1, div.box2, div.box3, div.box4 {
+div.box {
 	width: 25%;
 	float: left;
 	vertical-align: top;
@@ -86,7 +86,7 @@ div.box2 { background: #222222; }
 div.box3 { background: #7a7a7a; }
 div.box4 { background: #353535; }
 
-div.box1 div, div.box2 div, div.box3 div, div.box4 div {
+div.box div {
 	max-height: 12.50em;
 	overflow: scroll;
 }
