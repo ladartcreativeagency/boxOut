@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     	var container = $("div.box"),
     		trigger = $("div.box a"),
     		vpw = $(window).width(),
-    		containerHeight = $("div.box").height(),
+    		containerHeight = $("section.content").height(),
     		selected = $("a.clicked").parent().parent();
 
     	if (trigger.hasClass("clicked")) {
@@ -40,9 +40,10 @@ jQuery(document).ready(function($) {
 	    		"width": vpw + "px",
 	    		"height": containerHeight + "px",
 	    		"float": "none",
+	    		"overflow": "none",
 	    		"position": "absolute",
 	    		"top": 0,
-	    		"left": 0,
+	    		"left": 0
 	    	});
 
 	    	trigger.css("display", "none");

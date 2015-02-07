@@ -1,4 +1,9 @@
 
+
+/*================================
+=            STANDARD            =
+================================*/
+
 body {
 	width: 100%;
 	position: relative;
@@ -56,11 +61,11 @@ a {
 }
 
 section.hero {
-	width: 70%;
+	width: 80%;
 	padding-top: 2.0em;
 	padding-bottom: 2.750em;
-	padding-left: 15%;
-	padding-right: 15%;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 section.content {
@@ -70,8 +75,7 @@ section.content {
 }
 
 div.box {
-	width: 25%;
-	float: left;
+	width: 100%;
 	vertical-align: top;
 	box-sizing: border-box;
 	padding-top: 1.0em;
@@ -87,7 +91,7 @@ div.box3 { background: #7a7a7a; }
 div.box4 { background: #353535; }
 
 div.box div {
-	max-height: 12.50em;
+	max-height: 5.0em;
 	overflow: scroll;
 }
 
@@ -100,3 +104,76 @@ div.linkWrap {
 
 div.box2 h2, div.box2 p, div.box2 a { color: #efefef; }
 div.box4 h2, div.box4 p, div.box4 a { color: #b7b7b7; }
+
+/*-----  End of STANDARD  ------*/
+
+
+/*=======================================
+=            MIN-WIDTH 768PX            =
+=======================================*/
+
+@media only screen and (min-width: 768px) {
+
+	section.hero {
+		width: 70%;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+
+	div.box {
+		width: 50%;
+		float: left;
+		display: -moz-inline-stack;
+	}
+
+	div.box div {
+		max-height: 8.50em;
+	}
+
+}
+
+/*-----  End of MIN-WIDTH 768PX  ------*/
+
+
+/*=======================================
+=            MIN-WIDTH 960PX            =
+=======================================*/
+
+@media only screen and (min-width: 960px) {
+
+
+}
+
+/*-----  End of MIN-WIDTH 960PX  ------*/
+
+
+/*========================================
+=            MIN-WIDTH 1100PX            =
+========================================*/
+
+@media only screen and (min-width: 1100px) {
+
+	div.box {
+		width: 25%;
+	}
+
+	div.box div {
+		max-height: 12.50em;
+	}
+
+}
+
+/*-----  End of MIN-WIDTH 1100PX  ------*/
+
+
+/*========================================
+=            MIN-WIDTH 1440PX            =
+========================================*/
+
+@media only screen and (min-width: 1440px) {
+
+
+
+}
+
+/*-----  End of MIN-WIDTH 1440PX  ------*/
