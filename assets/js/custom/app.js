@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
     		event.preventDefault();
     	});
 
-    	//call boxOut
+    	// call boxOut
     	trigger.on("click", expandBox);
 
         console.log("HOORAY INIT!");
@@ -55,10 +55,8 @@ jQuery(document).ready(function($) {
     		selected.css("opacity", 1);
     	}
 
-
-    	console.log("boxOut works!");
+    	console.log("expandBox works!");
     }
-
 
     console.log("app.js works!");
 
