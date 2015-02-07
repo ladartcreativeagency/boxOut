@@ -9,6 +9,11 @@ body {
 	position: relative;
 }
 
+/* utility class for clearing floats */
+.clearfix {
+	clear: both;
+}
+
 div.wrap {
 	width: 100%;
 	background: #efefef;
