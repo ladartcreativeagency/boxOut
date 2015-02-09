@@ -2,7 +2,7 @@
 jQuery(document).ready(function($) {
 
 	// var to trigger boxOut function
-	var trigger = $("div.box a");
+	var trigger = $("div.box a.viewMore");
 
     init();
 
@@ -16,18 +16,18 @@ jQuery(document).ready(function($) {
     		event.preventDefault();
     	});
 
-    	// call boxOut
+    	// expand box
     	trigger.on("click", expandBox);
 
         console.log("HOORAY INIT!");
     }
 
-    // write custom functions here
+    // expand the container
     function expandBox() {
 
     	// vars to make your life easier
     	var container = $("div.box"),
-    		trigger = $("div.box a"),
+    		trigger = $("div.box a.viewMore"),
     		vpw = $(window).width(),
     		containerHeight = $("section.content").height(),
     		selected = $("a.clicked").parent().parent();
@@ -35,6 +35,7 @@ jQuery(document).ready(function($) {
     	if (trigger.hasClass("clicked")) {
 
     		selected.addClass("selected");
+            $(".selected div.closeWrap a").addClass("close");
 
     		selected.css({
 	    		"width": vpw + "px",
@@ -51,11 +52,25 @@ jQuery(document).ready(function($) {
 
     	if (container.hasClass("selected")) {
 
+            var closeMe = $("div.closeWrap a.close");
+
     		container.css("opacity", 0);
     		selected.css("opacity", 1);
+            closeMe.css("opacity", 1);
     	}
 
     	console.log("expandBox works!");
+    }
+
+    // close the container
+    function closeBox() {
+
+        var closeMe = $("div.closeWrap a.close"),
+            trigger = $("div.box a.viewMore"),
+            selected = $("a.clicked").parent().parent();
+
+
+        console.log("closeBox works!");
     }
 
     console.log("app.js works!");
