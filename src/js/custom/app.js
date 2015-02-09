@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
 
 	// var to trigger boxOut function
 	var trigger = $("div.box a.viewMore");
+        closeMe = $("div.closeWrap a.close");
 
     init();
 
@@ -10,14 +11,17 @@ jQuery(document).ready(function($) {
     function init() {
 
     	// add class .clicked to trigger and not other anchor tags
-    	$("div.box a").on("click", function() {
-    		$("div.box a").removeClass("clicked");
+    	$("div.box a.viewMore").on("click", function() {
+    		$("div.box a.viewMore").removeClass("clicked");
     		$(this).addClass("clicked");
     		event.preventDefault();
     	});
 
     	// expand box
     	trigger.on("click", expandBox);
+
+        // close box
+        closeMe.on("click", closeBox);
 
         console.log("HOORAY INIT!");
     }
@@ -39,12 +43,7 @@ jQuery(document).ready(function($) {
 
     		selected.css({
 	    		"width": vpw + "px",
-	    		"height": containerHeight + "px",
-	    		"float": "none",
-	    		"overflow": "none",
-	    		"position": "absolute",
-	    		"top": 0,
-	    		"left": 0
+	    		"height": containerHeight + "px"
 	    	});
 
 	    	trigger.css("display", "none");
@@ -52,23 +51,23 @@ jQuery(document).ready(function($) {
 
     	if (container.hasClass("selected")) {
 
-            var closeMe = $("div.closeWrap a.close");
-
     		container.css("opacity", 0);
     		selected.css("opacity", 1);
-            closeMe.css("opacity", 1);
     	}
 
     	console.log("expandBox works!");
     }
 
-    // close the container
+    // close expanded container
     function closeBox() {
 
-        var closeMe = $("div.closeWrap a.close"),
-            trigger = $("div.box a.viewMore"),
-            selected = $("a.clicked").parent().parent();
+        // var closeMe = $("div.closeWrap a.close"),
+        //     viewMore = $("div.box a.viewMore"),
+        //     selected = $("a.close").parent().parent();
 
+        // closeMe.removeClass("close");
+        // selected.removeClass("selected");
+        // viewMore.css("display", "block");
 
         console.log("closeBox works!");
     }

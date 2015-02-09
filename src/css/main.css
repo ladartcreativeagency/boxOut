@@ -212,3 +212,15 @@ footer p {
 }
 
 /*-----  End of MIN-WIDTH 1100PX  ------*/
+
+
+/*==========  Apply to expanding container  ==========*/
+div.selected {
+	float: none;
+	overflow: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+div.box div.closeWrap a.close { opacity: 1; }
