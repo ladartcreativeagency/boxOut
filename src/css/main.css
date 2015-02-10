@@ -119,7 +119,7 @@ div.box div.closeWrap {
 	right: 0;
 }
 
-div.box div.closeWrap a { opacity: 0; }
+div.box div.closeWrap a.remove { opacity: 0; }
 
 div.box2 div.closeWrap svg line { stroke: #efefef; }
 div.box4 div.closeWrap svg line { stroke: #b7b7b7; }
@@ -217,10 +217,11 @@ footer p {
 /*==========  Apply to expanding container  ==========*/
 div.selected {
 	float: none;
-	overflow: visible;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+
+div.selected div.boxText { overflow: visible; }
 
 div.box div.closeWrap a.close { opacity: 1; }
