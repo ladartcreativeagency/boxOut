@@ -63,21 +63,19 @@ jQuery(document).ready(function($) {
             $(".selected div.closeWrap a").addClass("close");
 
             // dynamically add proper width and height to expanding container
-    		selected.css({
-	    		"width": vpw + "px",
-	    		"height": containerHeight + "px"
-	    	});
+            TweenLite.to(selected, 0.3, {width: vpw + "px",
+                                        height: containerHeight + "px"});
 
             // hide var trigger
-	    	trigger.css("display", "none");
+            TweenLite.to(trigger, 0.3, {display: "none"});
     	}
 
         // check for class on container
     	if (container.hasClass("selected")) {
 
             // hide containers that aren't expanded
-    		container.css("opacity", 0);
-    		selected.css("opacity", 1);
+            TweenLite.to(container, 0.3, {opacity: 0});
+            TweenLite.to(selected, 0.3, {opacity: 1.0});
     	}
 
     	console.log("expandBox works!");
@@ -97,27 +95,27 @@ jQuery(document).ready(function($) {
         // remove class on close trigger
         closeMe.removeClass("close");
         // reset height
-        selected.css("height", 100 + "%");
+        TweenLite.to(selected, 0.3, {height: 100 + "%"});
         // add .notExpanded class
         selected.addClass("notExpanded");
         // remove class that has styles for expanded container
         selected.removeClass("selected");
         // show var trigger to allow container to expand again
-        viewMore.css("display", "block");
+        TweenLite.to(viewMore, 0.3, {display: "block"});
         // show other containers that weren't expanded
-        container.css("opacity", 1);
+        TweenLite.to(container, 0.3, {opacity: 1.0});
 
         // container size for small screens
-        container.css("width", 100 + "%");
+        TweenLite.to(container, 0.3, {width: 100 + "%"});
 
         // container size for medium screens
         if (vpw > 767) {
-            container.css("width", 50 + "%");
+            TweenLite.to(container, 0.3, {width: 50 + "%"});
         }
 
         // container size for large screens
         if (vpw > 1099) {
-            container.css("width", 25 + "%");
+            TweenLite.to(container, 0.3, {width: 25 + "%"});
         }
 
         console.log("closeBox works!");
