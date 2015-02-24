@@ -202,16 +202,16 @@ footer p {
 
 
 /*========================================
-=            MIN-WIDTH 1100PX            =
+=            MIN-WIDTH 1025PX            =
 ========================================*/
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1025px) {
 
 	div.box { width: 25%; }
 
 }
 
-/*-----  End of MIN-WIDTH 1100PX  ------*/
+/*-----  End of MIN-WIDTH 1025PX  ------*/
 
 
 /*==========  Apply to expanding container  ==========*/
