@@ -50,8 +50,7 @@ jQuery(document).ready(function($) {
     		trigger = $("div.box a.viewMore"),
     		vpw = $(window).width(),
     		containerHeight = $("section.content").height(),
-    		selected = $("a.clicked").parent().parent(),
-            content = $("section.content");
+    		selected = $("a.clicked").parent().parent();
 
         // check for class to begin magic
     	if (trigger.hasClass("clicked")) {
@@ -65,30 +64,19 @@ jQuery(document).ready(function($) {
 
             // dynamically add proper width and height to expanding container
             TweenLite.to(selected, 0.3, {width: vpw + "px",
-                                        height: containerHeight + "px",
-                                        display: "block",
-                                        opacity: 1.0});
+                                        height: containerHeight + "px"});
 
             // hide var trigger
-            TweenLite.to(trigger, 0.01, {display: "none"});
+            TweenLite.to(trigger, 0.01, {opacity: 0});
     	}
 
         // check for class on container
     	if (container.hasClass("selected")) {
 
-            // show selected container
-            TweenLite.to(selected, 0.1, {opacity: 1.0,
-                                        float: "left",
-                                        display: "block"});
-    	} else {
             // hide containers that aren't expanded
-            TweenLite.to(container, 0.3, {opacity: 0,
-                                         float: "none",
-                                         display: "none"});
-        }
-
-        // so container won't collapse
-        TweenLite.to(content, 0.3, {height: containerHeight + "px"});
+            TweenLite.to(container, 0.3, {opacity: 0});
+            TweenLite.to(selected, 0.3, {opacity: 1.0});
+    	}
 
     	console.log("expandBox works!");
     }
@@ -102,8 +90,7 @@ jQuery(document).ready(function($) {
             container = $("div.box"),
             vpw = $(window).width(),
             containerHeight = $("div.notExpanded").height(),
-            selected = $("a.clicked").parent().parent(),
-            content = $("section.content");
+            selected = $("a.clicked").parent().parent();
 
         // remove class on close trigger
         closeMe.removeClass("close");
@@ -114,12 +101,9 @@ jQuery(document).ready(function($) {
         // remove class that has styles for expanded container
         selected.removeClass("selected");
         // show var trigger to allow container to expand again
-        TweenLite.to(viewMore, 0.3, {display: "block"});
+        TweenLite.to(viewMore, 0.1, {opacity: 1, delay: 0.8});
         // show other containers that weren't expanded
-        TweenLite.to(container, 0.1, {opacity: 1.0,
-                                     float: "left",
-                                     display: "block",
-                                     delay: 0.5});
+        TweenLite.to(container, 0.2, {opacity: 1.0, delay: 0.5});
 
         // container size for small screens
         if (vpw < 768) {
