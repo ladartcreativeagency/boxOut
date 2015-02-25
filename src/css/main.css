@@ -115,7 +115,8 @@ div.box div.closeWrap {
 	height: 25px;
 	position: absolute;
 	top: 28%;
-	right: 0;
+	right: 5%;
+	z-index: 1000;
 }
 
 div.box div.closeWrap a.remove { opacity: 0; }

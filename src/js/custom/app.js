@@ -63,11 +63,13 @@ jQuery(document).ready(function($) {
             $(".selected div.closeWrap a").addClass("close");
 
             // dynamically add proper width and height to expanding container
-            TweenLite.to(selected, 0.3, {width: vpw + "px",
-                                        height: containerHeight + "px"});
+            TweenLite.to(selected, 0.3, {maxWidth: 100 + "%",
+                                        width: vpw + "px",
+                                        height: containerHeight + "px",
+                                        ease:Power1.easeIn});
 
             // hide var trigger
-            TweenLite.to(trigger, 0.01, {opacity: 0});
+            TweenLite.to(trigger, 0.1, {opacity: 0, ease:Power1.easeOut});
     	}
 
         // check for class on container
@@ -75,6 +77,7 @@ jQuery(document).ready(function($) {
 
             // hide containers that aren't expanded
             TweenLite.to(container, 0.3, {opacity: 0});
+            // but make sure selected container is visibile!!!
             TweenLite.to(selected, 0.3, {opacity: 1.0});
     	}
 
@@ -100,25 +103,10 @@ jQuery(document).ready(function($) {
         selected.addClass("notExpanded");
         // remove class that has styles for expanded container
         selected.removeClass("selected");
-        // show var trigger to allow container to expand again
-        TweenLite.to(viewMore, 0.1, {opacity: 1, delay: 0.8});
         // show other containers that weren't expanded
-        TweenLite.to(container, 0.2, {opacity: 1.0, delay: 0.5});
-
-        // container size for small screens
-        if (vpw < 768) {
-            TweenLite.to(container, 0.3, {width: 100 + "%"});
-        }
-
-        // container size for medium screens
-        if ((vpw > 767) && (vpw < 1025)) {
-            TweenLite.to(container, 0.3, {width: 50 + "%"});
-        }
-
-        // container size for large screens
-        if (vpw > 1024) {
-            TweenLite.to(container, 0.3, {width: 25 + "%"});
-        }
+        TweenLite.to(container, 0.3, {opacity: 1.0, delay: 0.05, ease:Power3.easeOut});
+        // show var trigger to allow container to expand again
+        TweenLite.to(viewMore, 0.1, {opacity: 1, delay: 0.4, ease:Power3.easeOut});
 
         console.log("closeBox works!");
     }
