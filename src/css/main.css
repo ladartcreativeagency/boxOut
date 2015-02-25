@@ -91,13 +91,12 @@ section.content {
 }
 
 div.box {
-	width: 100%;
-	vertical-align: top;
-	box-sizing: border-box;
-	padding-top: 1.0em;
-	padding-bottom: 1.0em;
-	padding-left: 2%;
-	padding-right: 2%;
+	max-width: 100%;
+	-webkit-box-flex: 4;
+	-webkit-flex-grow: 4;
+	-moz-flex-grow: 4;
+	-ms-flex-positive: 4;
+	flex-grow: 4;
 	margin: 0;
 }
 
@@ -127,13 +126,15 @@ div.box4 div.closeWrap svg line { stroke: #b7b7b7; }
 div.box div.boxText {
 	max-height: 5.0em;
 	overflow: hidden;
+	padding-left: 4%;
+	padding-right: 4%;
 }
 
 div.linkWrap {
 	width: 100%;
 	text-align: center;
 	padding-top: 1.250em;
-	padding-bottom: 0.50em;
+	padding-bottom: 1.50em;
 }
 
 div.meat1, div.meat2, div.meat3 {
@@ -165,6 +166,31 @@ footer p {
 
 	header { margin-bottom: 3.50em; }
 
+	section.content {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flexbox;
+		display: flex;
+		@if $value == row-reverse {
+			-webkit-box-direction: reverse;
+			-webkit-box-orient: horizontal;
+		} @else if $value == column {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: vertical;
+		} @else if $value == column-reverse {
+			-webkit-box-direction: reverse;
+			-webkit-box-orient: vertical;
+		} @else {
+			-webkit-box-direction: normal;
+			-webkit-box-orient: horizontal;
+		}
+		-webkit-flex-direction: row;
+		-moz-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+	}
+
 	section.hero, section.extraBacon {
 		width: 70%;
 		padding-left: 15%;
@@ -172,8 +198,7 @@ footer p {
 	}
 
 	div.box {
-		width: 50%;
-		float: left;
+		max-width: 25%;
 	}
 
 	div.box div.boxText { max-height: 8.50em; }
@@ -207,7 +232,7 @@ footer p {
 
 @media only screen and (min-width: 1025px) {
 
-	div.box { width: 25%; }
+
 
 }
 
