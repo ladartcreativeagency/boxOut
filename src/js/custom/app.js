@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
     function boxOut() {
 
     	// add class .clicked to selected var trigger and not other anchor tags
-    	$("div.box a.viewMore").on("click", function() {
+    	$("div.box a.viewMore").on("click", function(event) {
     		$("div.box a.viewMore").removeClass("clicked");
     		$(this).addClass("clicked");
     		event.preventDefault();
